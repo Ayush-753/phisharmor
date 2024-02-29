@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PhishArmor</title>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/styles.css')}}" rel="stylesheet" />
+        <style>
+     .question {
+        color: rgb(0, 0, 0);
+        font-size: x-large;
+
+     }
+     .options {
+        color: rgb(0, 0, 0);
+        font-size: large;
+     }
+     .card {
+    min-height: 100%;
+}
+
+.card-text{
+  font-size: large;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+        </style>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url_for('index')}}">PhishArmor</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">Home</a></li>
+                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('phishing')}}">Learn about Phishing</a></li>
+                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('learn')}}">Learn Machine Learning</a></li>
+                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('email')}}">Detect Phishing Emails</a></li>
+                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('quiz')}}">Quiz</a></li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Quiz
+                            </h1>
+                            <span class="subheading"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="card mb-0 mt-5 mx-auto" style="width: 50rem;">
+            <div class="card-body">
+              <div class="container mt-4">
+                <div class="row">
+                  <div class="col-md-30">
+                    <div id="quizFlashcard" class="flashcard">
+                      <div class="content">
+                        <h4>Time To Test Your Knowledge!</h4>
+                        <div id="quiz-container">
+                          <div id="quiz"></div>
+                          <button  type="button" class="btn btn-primary" onclick="submitQuiz()">Submit</button>
+                          <p id="result"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </main>
+         <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/Ayush-753">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; PhishArmor 2024</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            const questions = [
+              {
+                question: 'What is the main purpose of cryptography?',
+                options: ['Data compression', 'Data encryption', 'Data authentication', 'Data storage'],
+                correctAnswer: 'Data encryption'
+              },
+              {
+                question: 'Which cryptographic algorithm is commonly used for secure communication over the internet?',
+                options: ['RSA', 'AES', 'DES', 'SHA-256'],
+                correctAnswer: 'RSA'
+              },
+              {
+                question: 'What is a phishing attack?',
+                options: ['A type of fishing', 'A social engineering attack', 'A malware attack', 'A network attack'],
+                correctAnswer: 'A social engineering attack'
+              },
+              {
+                question: 'What is the purpose of a public key in asymmetric cryptography?',
+                options: ['Encrypt data', 'Decrypt data', 'Both encrypt and decrypt data', 'Generate digital signatures'],
+                correctAnswer: 'Encrypt data'
+              },
+              {
+                question: 'What is the primary goal of a phishing attack?',
+                options: ['Data encryption', 'Data theft', 'Denial of service', 'Network intrusion'],
+                correctAnswer: 'Data theft'
+              }
+            ];
+        
+            let currentQuestion = 0;
+            let score = 0;
+        
+            function loadQuestion() {
+              const quizContainer = document.getElementById('quiz');
+              const currentQ = questions[currentQuestion];
+        
+              const questionElem = document.createElement('div');
+              questionElem.classList.add('question');
+              questionElem.textContent = `Question ${currentQuestion + 1}: ${currentQ.question}`;
+        
+              const optionsElem = document.createElement('div');
+              optionsElem.classList.add('options');
+              currentQ.options.forEach((option, index) => {
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'answer';
+                radio.value = option;
+        
+                const label = document.createElement('label');
+                label.textContent = `${index + 1}. ${option}`;
+        
+                optionsElem.appendChild(radio);
+                optionsElem.appendChild(label);
+                optionsElem.appendChild(document.createElement('br'));
+              });
+        
+              quizContainer.innerHTML = '';
+              quizContainer.appendChild(questionElem);
+              quizContainer.appendChild(optionsElem);
+            }
+        
+            function submitQuiz() {
+              const selectedOption = document.querySelector('input[name="answer"]:checked');
+        
+              if (selectedOption) {
+                if (selectedOption.value === questions[currentQuestion].correctAnswer) {
+                  score++;
+                }
+        
+                currentQuestion++;
+        
+                if (currentQuestion < questions.length) {
+                  loadQuestion();
+                } else {
+                  showResult();
+                }
+              } else {
+                alert('Please select an option before submitting.');
+              }
+            }
+        
+            function showResult() {
+              const resultElem = document.getElementById('result');
+              resultElem.textContent = `Quiz completed! Your score: ${score} out of ${questions.length}`;
+            }
+        
+            // Initial load
+            loadQuestion();
+          </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+        <script src="{{url_for('static', filename='assets/js/scripts.js')}}"></script>
+    </body>
+</html>

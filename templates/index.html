@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PhishArmor</title>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="{{url_for('static', filename='assets/css/styles.css')}}" rel="stylesheet" />
+   <style>
+    .card {
+        min-height: 100%;
+    }
+    .h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgba(25, 24, 24, 0.283);
+    }
+   </style>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url_for('index')}}">PhishArmor</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                       <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('phishing')}}">Learn about Phishing</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('learn')}}">Learn Machine Learning</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('email')}}">Detect Phishing Emails</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('quiz')}}">Quiz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="masthead" style="background-image: url('https://unsplash.com/photos/9SoCnyQmkzI/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8M3x8Y3liZXJzZWN1cml0eXxlbnwwfHx8fDE3MDAzOTQ5NzJ8MA&force=true')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>PhishArmor</h1>
+                        <span class="subheading">One does not simply click.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <main>
+            <div class="container-fluid mt-2">
+                <div class="row">
+                    <div class="col-xl-6 mt-5">
+                        <div class="card text-center border-info mb-0" >
+                            <div class="card-body">
+                              <h1 class="card-title">Learn about Phishing</h1>
+                              <img class="card-img-bottom img-responsive" src="https://mytechdecisions.com/wp-content/uploads/2020/04/AdobeStock_204077439-1000x500.jpg" alt="Img">
+                              <p class="card-text">
+                                Explore the concepts and techniques related to phishing attacks here and know its consequences</p>
+                                <a href="{{url_for('phishing')}}" class="btn btn-primary">Learn about Phishing</a>
+                            </div> 
+                          </div>
+                    </div>
+
+                    <div class="col-xl-6 mt-5">
+                        <div class="card text-center  border-info mb-0" >
+                            <div class="card-body ">
+                             <h1 class="card-title">Learn Machine Learning</h1>
+                              <img class="card-img-bottom img-responsive" src="https://www.fintechsvjobs.com/wp-content/uploads/2020/10/machine-learning-1000x500.jpg" alt="Img">
+                              <p class="card-text">
+                                Learn about the machine learning approaches available and are used for phishing detection</p>
+                                <a href="{{url_for('learn')}}" class="btn btn-primary">Learn Machine Learning</a>
+                            </div> 
+                          </div>
+                    </div>
+
+                    <div class="col-xl-6 mt-5">
+                        <div class="card text-center border-info mb-0" >
+                            <div class="card-body">
+                              <h1 class="card-title">Email Phishing Detection using Machine Learning</h1>
+                              <img class="card-img-bottom img-responsive" src="https://eclipse-online.com/wp-content/uploads/ECI-phishing-blog-header.png" alt="Img">
+                              <p class="card-text">
+                                Got an Email that seems sketchy to click? Just paste it and we'll analyse it using our Advanced ML technique. We'll determine and tell you whether if it's safe</p>
+                                <a href="{{url_for('email')}}" class="btn btn-primary">Try the Email Phishing Detection</a>
+                            </div> 
+                          </div>
+                        </div>
+
+
+                    <div class="col-xl-6 mt-5">
+                        <div class="card text-center border-info mb-0" >
+                            <div class="card-body">
+                              <h1 class="card-title">Test your knowledge right here with a simple quiz</h1>
+                              <img class="card-img-bottom img-responsive" src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202202/phishing-1200-sixteen_nine.jpg?size=948:533" alt="Img">
+                              <p class="card-text">
+                                Test your knowledge on phishing just by giving a small quiz</p>
+                                <a href="{{url_for('quiz')}}" class="btn btn-primary">Give a quick quiz</a>
+                            </div> 
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </main>
+         <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/Ayush-753">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; PhishArmor 2024</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+        <script src="{{url_for('static', filename='assets/js/scripts.js')}}"></script>
+    </body>
+</html>
