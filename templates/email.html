@@ -54,10 +54,10 @@
                     <div class="card-body">
                       <h2 class="card-title">Analyse the Email</h2>
                       <p class="card-text">Please Enter the Email Content Below to Analyse</p>
-            <form action="/email" method="post">
+            <form action="/email" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email: </label>
-                    <input type="textarea" class="form-control" id="email"  name="email">
+                    <input type="textarea" class="form-control" name="email" id="email">
                   </div>
                   <br><br>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -83,7 +83,7 @@
           </main>
 
 
-        {% endblock %}
+          {% endblock %}
          <footer class="border-top">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
