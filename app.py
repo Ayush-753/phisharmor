@@ -13,6 +13,9 @@ def email():
     if request.method == 'POST':
         email = request.form['email']
         email_analyse = pe.analyse_email([email])
+        email2_analyse = pe.analyse2_email([email])
+        email3_analyse = pe.analyse3_email([email])
+        email4_analyse = pe.analyse4_email([email])
     return render_template('email.html',**locals())
 
 @app.route('/learn', methods=["GET", "POST"])
